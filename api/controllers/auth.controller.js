@@ -93,6 +93,8 @@ export const login = [
       res
         .cookie("token", token, {
           httpOnly: true,
+          secure: true, // ✅ Render is HTTPS
+          sameSite: "None", // ✅ required for cross-site cookies
           maxAge: age,
         })
         .status(200)
