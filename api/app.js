@@ -18,7 +18,10 @@ const app = express();
 
 // CORS options
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://realestatewebsitefrontend.onrender.com",
+  ],
   credentials: true,
 };
 
@@ -38,7 +41,10 @@ app.use("/api/messages", messageRoute);
 const server = http.createServer(app); 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://realestatewebsitefrontend.onrender.com",
+    ],
     credentials: true,
   },
 });
