@@ -79,6 +79,8 @@ io.on("connection", (socket) => {
 });
 
 // Start the server (both Express + Socket.IO)
-server.listen(8800, () => {
-  console.log("Server and Socket.IO are running on port 8800!");
+const PORT = process.env.PORT || 8800;
+server.listen(PORT, () => {
+  console.log(`Server and Socket.IO are running on port ${PORT}`);
 });
+
